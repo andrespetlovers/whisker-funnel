@@ -125,8 +125,16 @@ p{margin-bottom:1em}
 .stat.blue b{color:var(--blue)}
 .stat span{font-size:.85rem;color:var(--muted);font-weight:600}
 .reviews{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px;margin:1.8rem 0;align-items:start}
-.review{background:var(--panel2);border:1px solid var(--line);border-radius:14px;padding:12px}
-.review img{width:100%;height:auto;display:block;border-radius:8px}
+.review{background:var(--panel2);border:1px solid var(--line);border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:8px}
+.review .rhead{display:flex;align-items:center;gap:10px}
+.review .rav{width:32px;height:32px;border-radius:50%;background:#33333c;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.85rem;color:#b9b9c4;flex:0 0 32px}
+.review .rname{font-weight:700;font-size:.9rem}
+.review .rtitle{font-size:.92rem;color:var(--text)}
+.review .rtitle .st{color:#FF9900;letter-spacing:1px;margin-right:6px}
+.review .rmeta{font-size:.75rem;color:var(--muted)}
+.review .rmeta b{color:#FF9900;font-weight:700}
+.review .rbody{font-size:.88rem;color:#c9c9d2;margin:0;line-height:1.55}
+.review .rhelp{font-size:.75rem;color:var(--muted)}
 
 /* chaos selector */
 .lvls{display:flex;flex-wrap:wrap;gap:10px;margin:1.8rem 0;justify-content:center}
@@ -598,12 +606,47 @@ footer{border-top:1px solid var(--line);padding:28px 20px;text-align:center;font
     </div>
 
     <div class="reviews">
-      <div class="review"><img src="img/review-1.png" alt="5-star Amazon review by Manuel — works better than my vacuum, grabs hair from couches, carpets, beds and car" loading="lazy"></div>
-      <div class="review"><img src="img/review-2.png" alt="5-star Amazon review by Stephanie D — 2 dogs and 1 cat, keeps one in the car, one at work and several at home" loading="lazy"></div>
-      <div class="review"><img src="img/review-3.png" alt="5-star Amazon review by Lisa Dunsmore — cat momma who loves to wear black, keeps one in her car and purse" loading="lazy"></div>
-      <div class="review"><img src="img/review-4.png" alt="5-star Amazon review by Miss Kim — bought one to test it, buying a bundle because it works" loading="lazy"></div>
-      <div class="review"><img src="img/review-5.png" alt="5-star Amazon review by greytfan2 — works better than name brand rollers, perfect for purse, luggage and car" loading="lazy"></div>
-      <div class="review"><img src="img/review-6.png" alt="5-star Amazon review by Grace Walsh — finally a lint brush that actually works" loading="lazy"></div>
+      <div class="review">
+        <div class="rhead"><span class="rav">M</span><span class="rname">Manuel</span></div>
+        <div class="rtitle"><span class="st">★★★★★</span><strong>Absolute must-have for pet owners!</strong></div>
+        <div class="rmeta">Reviewed in the United States on February 16, 2026 · <b>Verified Purchase</b></div>
+        <p class="rbody">I rarely leave reviews, but this product deserves one. I have an Australian Shepherd, so shedding season is no joke in this house. I've tried countless tools and honestly thought I needed to buy a super expensive vacuum to finally solve the problem. Turns out, this was what I actually needed. The stickiness is incredible. It grabs hair from couches, carpets, beds, floors, my car, my dog's bed and more. It works better than I expected — and in some cases, better than my vacuum. If you have pets (especially heavy shedders), stop overthinking it. Just get this.</p>
+        <div class="rhelp">15 people found this helpful</div>
+      </div>
+      <div class="review">
+        <div class="rhead"><span class="rav">S</span><span class="rname">Stephanie D</span></div>
+        <div class="rtitle"><span class="st">★★★★★</span><strong>THESE HAVE A SPRIAL TEAR OFF</strong></div>
+        <div class="rmeta">Reviewed in the United States on April 24, 2026 · <b>Verified Purchase</b></div>
+        <p class="rbody">Having 2 long hair dogs &amp; 1 long haired cat, we go through a lot of lint rollers. I keep 1 in the car, 1 at work, &amp; several at home. These are extra sticky &amp; do a great job at getting all the pet hair off our clothes. The best part is the spiral tear off. What a GREAT idea!!! No longer having to waste several sheets because too much rolled out at once. I will be a customer for life on this product. 💜</p>
+        <div class="rhelp">2 people found this helpful</div>
+      </div>
+      <div class="review">
+        <div class="rhead"><span class="rav">L</span><span class="rname">Lisa Dunsmore</span></div>
+        <div class="rtitle"><span class="st">★★★★★</span><strong>Perfect compact size for on the go!</strong></div>
+        <div class="rmeta">Reviewed in the United States on July 4, 2024 · <b>Verified Purchase</b></div>
+        <p class="rbody">These may be small but they are mighty! As a cat momma who also loves to wear black, I keep one of these on hand in my car, in my purse, and everywhere I can think to keep one. The small shape makes them easy to bring along and keep anywhere for 'emergencies' and they have a super strong stick picking up all hair and lint off my clothes!</p>
+        <div class="rhelp">2 people found this helpful</div>
+      </div>
+      <div class="review">
+        <div class="rhead"><span class="rav">M</span><span class="rname">Miss Kim</span></div>
+        <div class="rtitle"><span class="st">★★★★★</span><strong>A Lint Brush That Works!</strong></div>
+        <div class="rmeta">Reviewed in the United States on July 10, 2025 · <b>Verified Purchase</b></div>
+        <p class="rbody">It's a lint brush that does what they say it does. Affordable, durable, sticky and rolls smoothly. Picks up hair, dog hair, dirt, anything your dogs can bring in from the backyard. Tape pulls off easily. I only bought one to see if it actual works. I will buy a bundle because it works.</p>
+      </div>
+      <div class="review">
+        <div class="rhead"><span class="rav">G</span><span class="rname">greytfan2</span></div>
+        <div class="rtitle"><span class="st">★★★★★</span><strong>Better than brand name</strong></div>
+        <div class="rmeta">Reviewed in the United States on March 6, 2026 · <b>Verified Purchase</b></div>
+        <p class="rbody">These little guys are perfect size for a purse, luggage, work, or car. They are super sticky and work quickly to get my fur baby hair off my clothes. They work better than the name brand larger rolls I have used in the past. Definitely recommend.</p>
+        <div class="rhelp">2 people found this helpful</div>
+      </div>
+      <div class="review">
+        <div class="rhead"><span class="rav">G</span><span class="rname">Grace Walsh</span></div>
+        <div class="rtitle"><span class="st">★★★★★</span><strong>YES! Finally a great lint brush</strong></div>
+        <div class="rmeta">Reviewed in the United States on May 22, 2026 · <b>Verified Purchase</b></div>
+        <p class="rbody">O.M.G. Please BUY this item! I don't usually write reviews but this lint roller not only picks up lint and fur GREAT but! The design is genius! So easy to get that edge and pull completely with ease. I've never found a lint brush that actually works.</p>
+        <div class="rhelp">One person found this helpful</div>
+      </div>
     </div>
 
     <div class="cta-stack">
