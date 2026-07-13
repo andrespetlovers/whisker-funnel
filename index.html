@@ -173,6 +173,7 @@ p{margin-bottom:1em}
 
 /* ugc row */
 .ugc-row{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:2rem 0}
+.ugc-vid{width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:var(--radius);border:1px solid var(--line);background:#000;display:block}
 
 /* FAQ */
 .faq{max-width:720px;margin:2rem auto 0}
@@ -594,10 +595,10 @@ footer{border-top:1px solid var(--line);padding:28px 20px;text-align:center;font
     </div>
 
     <div class="ugc-row">
-      <div class="ph ph-tall"><span class="play"></span>[UGC — shirt cleanup]</div>
-      <div class="ph ph-tall"><span class="play"></span>[UGC — sofa before/after]</div>
-      <div class="ph ph-tall"><span class="play"></span>[UGC — blanket]</div>
-      <div class="ph ph-tall"><span class="play"></span>[UGC — car seat]</div>
+      <video class="ugc-vid" src="img/ugc-1.mp4" muted loop playsinline preload="metadata" aria-label="UGC clip — pet hair coming off clothes"></video>
+      <video class="ugc-vid" src="img/ugc-2.mp4" muted loop playsinline preload="metadata" aria-label="UGC clip — sofa cleanup"></video>
+      <video class="ugc-vid" src="img/ugc-3.mp4" muted loop playsinline preload="metadata" aria-label="UGC clip — blanket cleanup"></video>
+      <video class="ugc-vid" src="img/ugc-4.mp4" muted loop playsinline preload="metadata" aria-label="UGC clip — car seat cleanup"></video>
     </div>
 
     <div class="narrow">
@@ -856,6 +857,14 @@ if(!reduced){
   }),{threshold:.35});
   spots.forEach(s=>pio.observe(s.el));
 }
+
+/* 6d2. UGC loops — play only while on screen (battery/data friendly) */
+const vio=new IntersectionObserver(es=>es.forEach(e=>{
+  const v=e.target;
+  if(e.isIntersecting){v.play().catch(()=>{});}
+  else{v.pause();}
+}),{threshold:.25});
+document.querySelectorAll(".ugc-vid").forEach(v=>vio.observe(v));
 
 /* 6e. paw trail */
 const paws=document.querySelector(".paws");
