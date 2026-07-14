@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PetLovers Brand Store — The Whisker Podcast Collection (Mockup)</title>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#1B6CA8;        /* deep PetLovers blue */
+  --blue-mid:#2E8FD4;
+  --blue-light:#D9EEF9;  /* light blue backgrounds */
+  --blue-pale:#EFF8FD;
+  --ribbon:#2278BB;
+  --ribbon-hl:#8FD8F8;
+  --yellow:#FFD814;      /* Amazon CTA yellow */
+  --ink:#0F1111;
+  --gray:#565959;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',Arial,sans-serif;background:#fff;color:var(--ink);max-width:1300px;margin:0 auto}
+h1,h2,h3,.disp{font-family:'Baloo 2',sans-serif}
+
+/* ===== simulated store nav ===== */
+.store-nav{display:flex;align-items:center;gap:24px;padding:14px 24px;border-bottom:1px solid #e7e7e7;font-size:.85rem;font-weight:700;color:var(--gray);flex-wrap:wrap}
+.store-nav .brand{font-family:'Baloo 2';font-size:1.3rem;font-weight:800;color:var(--blue)}
+.store-nav .active{color:var(--blue);border-bottom:3px solid var(--blue);padding-bottom:10px;margin-bottom:-13px}
+
+/* ===== follow strip ===== */
+.follow{background:linear-gradient(90deg,#7CC5EE,#9AD4F3);display:flex;align-items:center;justify-content:space-between;padding:12px 30px;gap:16px}
+.follow .l{font-family:'Baloo 2';font-weight:800;color:#134f7c;font-size:1.05rem}
+.follow .pill{background:#fff;border-radius:999px;padding:8px 28px;font-family:'Baloo 2';font-weight:800;color:#134f7c;font-size:1.1rem;box-shadow:0 2px 6px rgba(0,0,0,.08)}
+.follow .r{font-size:1.3rem}
+
+/* ===== hero banner ===== */
+.hero{width:100%;aspect-ratio:5/1;background:#0B0B0E;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero .ph-note{position:relative;z-index:2;color:#9a9aa6;font-size:.9rem;font-weight:600;text-align:center;border:1.5px dashed #3a3a46;border-radius:12px;padding:18px 26px;background:rgba(20,20,25,.65)}
+.sticker{position:absolute;z-index:3;font-family:'Baloo 2';font-weight:800;transform:rotate(-8deg);background:var(--yellow);color:#5b4a00;border-radius:999px;padding:10px 18px;font-size:.9rem;box-shadow:0 3px 10px rgba(0,0,0,.25)}
+.sticker.tl{top:14px;left:22px}
+.sticker.br{bottom:14px;right:22px;transform:rotate(6deg);background:#fff;color:var(--blue)}
+
+/* ===== ribbon headers (tape style) ===== */
+.ribbon-row{display:flex;align-items:center;justify-content:center;gap:18px;padding:40px 20px 8px}
+.ribbon-row .arrow{font-size:1.8rem;color:var(--blue-mid);font-weight:800}
+.ribbon{background:var(--ribbon);color:#fff;font-family:'Baloo 2';font-weight:800;font-size:clamp(1.1rem,2.6vw,1.6rem);letter-spacing:.04em;padding:10px 34px;position:relative;clip-path:polygon(2% 0,98% 4%,100% 96%,0 100%)}
+.ribbon em{font-style:normal;color:var(--ribbon-hl)}
+
+/* ===== product grid ===== */
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;padding:26px 24px}
+.tile{background:var(--blue-pale);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;transition:transform .15s, box-shadow .15s}
+.tile:hover{transform:translateY(-3px);box-shadow:0 6px 18px rgba(27,108,168,.18)}
+.tile .im{aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;padding:16px;background:#fff;border-radius:14px 14px 0 0}
+.tile .im img{max-width:100%;max-height:100%;object-fit:contain}
+.tile .tx{padding:12px 14px 16px;display:flex;flex-direction:column;gap:6px;flex:1}
+.tile .nm{font-size:.83rem;font-weight:700;line-height:1.35;color:var(--ink)}
+.tile .stars{color:#FF9900;font-size:.78rem;letter-spacing:1px}
+.tile .stars span{color:var(--gray);letter-spacing:0;margin-left:4px}
+.tile .pr{font-weight:800;font-size:1.05rem;margin-top:auto}
+.tile .pr .old{font-weight:400;font-size:.78rem;color:var(--gray);text-decoration:line-through;margin-left:6px}
+.tile .pr .off{color:#CC0C39;font-size:.78rem;font-weight:800;margin-left:4px}
+.btn-y{background:var(--yellow);border:none;border-radius:999px;font-family:'Inter';font-weight:700;font-size:.82rem;padding:9px 0;width:100%;cursor:pointer;color:#111;margin-top:8px}
+.badge{display:inline-block;background:var(--blue);color:#fff;font-size:.6rem;font-weight:800;letter-spacing:.06em;border-radius:4px;padding:3px 8px;width:fit-content}
+.badge.o{background:#E5641B}
+
+/* ===== wide split promo tile ===== */
+.split{display:grid;grid-template-columns:1fr 1fr;margin:20px 24px;border-radius:16px;overflow:hidden;min-height:380px}
+.split .side-img{background:#0B0B0E;position:relative;display:flex;align-items:center;justify-content:center}
+.split .side-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.split .side-img .ph-note{position:relative;color:#9a9aa6;font-size:.85rem;font-weight:600;text-align:center;border:1.5px dashed #3a3a46;border-radius:10px;padding:14px 20px;margin:14px;background:rgba(20,20,25,.65)}
+.split .side-tx{background:var(--blue-light);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;padding:36px;text-align:center}
+.split .side-tx h2{font-size:clamp(1.6rem,3.6vw,2.6rem);color:var(--blue);line-height:1.15;font-weight:800}
+.split .side-tx h2 em{font-style:normal;color:var(--blue-mid)}
+.btn-y.big{width:auto;padding:13px 36px;font-size:1rem;border-radius:999px;box-shadow:0 3px 10px rgba(0,0,0,.12)}
+
+/* ===== chaos level cards (flat section style) ===== */
+.levels{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;padding:26px 24px}
+.lvl{background:var(--blue-light);border-radius:14px;padding:22px 16px;text-align:center;display:flex;flex-direction:column;gap:8px;align-items:center;transition:transform .15s}
+.lvl:hover{transform:translateY(-3px)}
+.lvl .n{font-family:'Baloo 2';font-weight:800;color:var(--blue);font-size:1.15rem}
+.lvl .t{background:var(--blue);color:#fff;font-size:.62rem;font-weight:800;letter-spacing:.08em;border-radius:4px;padding:3px 10px}
+.lvl p{font-size:.78rem;color:#33607f;font-weight:600;line-height:1.4}
+.lvl .emoji{font-size:1.6rem}
+
+/* ===== why choose row ===== */
+.why{background:var(--blue-pale);margin:28px 0 0;padding:38px 24px 44px;text-align:center}
+.why h2{font-size:clamp(1.4rem,3vw,2rem);color:var(--blue);font-weight:800;margin-bottom:28px}
+.why .row{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;max-width:1000px;margin:0 auto}
+.why .item{display:flex;flex-direction:column;align-items:center;gap:10px}
+.why .circ{width:86px;height:86px;border-radius:50%;background:#BFE3F6;display:flex;align-items:center;justify-content:center;font-size:2rem}
+.why .item b{font-family:'Baloo 2';color:var(--blue);font-size:.95rem;line-height:1.25}
+
+/* closing */
+.close-line{text-align:center;padding:36px 20px 46px;font-family:'Baloo 2';font-weight:700;color:var(--blue);font-size:1.15rem;line-height:1.6}
+.close-line .m{color:#134f7c}
+
+footer{padding:20px;text-align:center;color:var(--gray);font-size:.75rem;border-top:1px solid #e7e7e7}
+@media(max-width:900px){
+  .grid{grid-template-columns:repeat(2,1fr)}
+  .levels{grid-template-columns:repeat(2,1fr)}
+  .split{grid-template-columns:1fr}
+  .why .row{grid-template-columns:repeat(2,1fr)}
+}
+</style>
+</head>
+<body>
+
+<!-- simulated store nav -->
+<div class="store-nav">
+  <span class="brand">PetLovers</span>
+  <span>INICIO</span>
+  <span>LOS MÁS VENDIDOS</span>
+  <span>RODILLOS PARA PELUSA</span>
+  <span>EZROLL Y EZLINT</span>
+  <span class="active">THE WHISKER PODCAST ✦</span>
+</div>
+
+<!-- follow strip -->
+<div class="follow">
+  <span class="l">↑ Follow us</span>
+  <span class="pill">Welcome to the special episode 🎙️</span>
+  <span class="r">🛒</span>
+</div>
+
+<!-- HERO BANNER 3000x600 -->
+<div class="hero">
+  <img src="img/banner.png" alt="" onerror="this.style.display='none'">
+  <span class="sticker tl">FIRST OFFICIAL PARTNERSHIP!</span>
+  <span class="sticker br">NO FUR! ✦</span>
+  <div class="ph-note">[HERO BANNER 3000×600 — Pumpkin &amp; Mocha at the podcast desk, neon sign, PetLovers rollers on the desk.<br>Lockup centered: “THE WHISKER PODCAST × PETLOVERS”]</div>
+</div>
+
+<!-- ribbon -->
+<div class="ribbon-row"><span class="arrow">↘</span><div class="ribbon">THE <em>WHISKER</em> COLLECTION</div></div>
+
+<!-- product grid -->
+<div class="grid">
+  <div class="tile">
+    <div class="im"><img src="img/product-roller.png" alt=""></div>
+    <div class="tx">
+      <span class="badge o">TIKTOK BESTSELLER</span>
+      <div class="nm">EzRoll Reusable Lint Roller — Sticky for Life</div>
+      <div class="stars">★★★★☆<span>(1.8K)</span></div>
+      <div class="pr">$9.99<span class="old">$11.99</span><span class="off">-17%</span></div>
+      <button class="btn-y">View on Amazon</button>
+    </div>
+  </div>
+  <div class="tile">
+    <div class="im"><img src="img/product-travel.png" alt=""></div>
+    <div class="tx">
+      <div class="nm">Travel Size Lint Roller 4-Pack — 120 Sheets</div>
+      <div class="stars">★★★★☆<span>(1.2K)</span></div>
+      <div class="pr">$8.99<span class="old">$12.99</span><span class="off">-31%</span></div>
+      <button class="btn-y">View on Amazon</button>
+    </div>
+  </div>
+  <div class="tile">
+    <div class="im"><img src="img/product-large.png" alt=""></div>
+    <div class="tx">
+      <div class="nm">Large 9.4" Carpet &amp; Floor Roller — 360 Sheets</div>
+      <div class="stars">★★★★☆<span>(570)</span></div>
+      <div class="pr">$26.99<span class="old">$35.99</span><span class="off">-25%</span></div>
+      <button class="btn-y">View on Amazon</button>
+    </div>
+  </div>
+  <div class="tile">
+    <div class="im"><img src="img/product-360.png" alt=""></div>
+    <div class="tx">
+      <span class="badge">BEST VALUE</span>
+      <div class="nm">6.3" Large Lint Roller Value Pack — 360 Sheets</div>
+      <div class="stars">★★★★☆<span>(83)</span></div>
+      <div class="pr">$16.99<span class="old">$21.99</span><span class="off">-23%</span></div>
+      <button class="btn-y">View on Amazon</button>
+    </div>
+  </div>
+  <div class="tile">
+    <div class="im"><img src="img/product-mega.png" alt=""></div>
+    <div class="tx">
+      <div class="nm">Extra Sticky Value Set — 600 Sheets, 6 Pack</div>
+      <div class="stars">★★★★☆<span>(8.8K)</span></div>
+      <div class="pr">$19.99</div>
+      <button class="btn-y">View on Amazon</button>
+    </div>
+  </div>
+  <div class="tile">
+    <div class="im"><img src="img/product-refills.png" alt=""></div>
+    <div class="tx">
+      <div class="nm">Lint Roller Refills Value Pack — 800 Sheets</div>
+      <div class="stars">★★★★☆<span>(336)</span></div>
+      <div class="pr">$20.99<span class="old">$24.99</span><span class="off">-16%</span></div>
+      <button class="btn-y">View on Amazon</button>
+    </div>
+  </div>
+  <div class="tile">
+    <div class="im"><img src="img/product-catbed.png" alt=""></div>
+    <div class="tx">
+      <span class="badge o">CAT-CODED</span>
+      <div class="nm">Cat Desk Bed — Elevated Attachment, 360° Swivel</div>
+      <div class="stars">★★★★☆<span>(47)</span></div>
+      <div class="pr">$39.99<span class="old">$44.99</span><span class="off">-11%</span></div>
+      <button class="btn-y">View on Amazon</button>
+    </div>
+  </div>
+  <div class="tile" style="background:var(--blue-light);align-items:center;justify-content:center;text-align:center;padding:20px">
+    <div style="font-size:2.2rem">🐾</div>
+    <div class="nm" style="font-family:'Baloo 2';color:var(--blue);font-size:1rem;margin:8px 0">Picked by Pumpkin &amp; Mocha for every level of pet hair chaos</div>
+    <div style="font-size:.75rem;color:#33607f;font-weight:600">The Whisker Podcast × PetLovers</div>
+  </div>
+</div>
+
+<!-- wide split promo -->
+<div class="split">
+  <div class="side-img">
+    <img src="img/tile-cats.png" alt="" onerror="this.style.display='none'">
+    <div class="ph-note">[IMAGE 1500×750 — Pumpkin &amp; Mocha in the studio, judging a hairy sofa /<br>holding the rollers like weapons]</div>
+  </div>
+  <div class="side-tx">
+    <h2>The pets can stay.<br><em>The hair has to go.</em></h2>
+    <button class="btn-y big">Shop the Collection</button>
+  </div>
+</div>
+
+<!-- ribbon -->
+<div class="ribbon-row"><span class="arrow">↘</span><div class="ribbon">CHOOSE YOUR <em>CHAOS LEVEL</em></div></div>
+
+<!-- chaos level cards -->
+<div class="levels">
+  <div class="lvl"><span class="emoji">👕</span><span class="t">LEVEL 1</span><div class="n">"It's Just a Little Hair, Man"</div><p>One pet, quick clothes fixes → EzRoll &amp; Travel</p></div>
+  <div class="lvl"><span class="emoji">🛋️</span><span class="t">LEVEL 2</span><div class="n">"The Sofa Is Looking at Me Weird"</div><p>Furniture &amp; beds → Large Rollers</p></div>
+  <div class="lvl"><span class="emoji">🐾</span><span class="t">LEVEL 3</span><div class="n">"Bro, the Pets Own the House"</div><p>Multi-pet homes → Value Sets</p></div>
+  <div class="lvl"><span class="emoji">🔄</span><span class="t">LEVEL 4</span><div class="n">"I Know I'll Use This Again"</div><p>Smart restock → Refills 800</p></div>
+  <div class="lvl"><span class="emoji">😼</span><span class="t">LEVEL 5</span><div class="n">"Extra Cat-Coded"</div><p>For the judges → Cat Desk Bed</p></div>
+</div>
+
+<!-- why choose -->
+<div class="why">
+  <h2>Why choose the Official Collection</h2>
+  <div class="row">
+    <div class="item"><span class="circ">😺</span><b>+1,000,000<br>Satisfied Customers</b></div>
+    <div class="item"><span class="circ">⭐</span><b>Over 30,000<br>Five Star Reviews</b></div>
+    <div class="item"><span class="circ">🐶</span><b>Designed by Pet Owners<br>for Pet Owners</b></div>
+    <div class="item"><span class="circ">🎙️</span><b>First Official<br>Whisker Podcast Partnership</b></div>
+  </div>
+</div>
+
+<div class="close-line">
+  Pumpkin says thank you. 🧡<br>
+  <span class="m">Mocha says clean your freaking couch.</span>
+</div>
+
+<footer>Mockup — “The Whisker Podcast Collection” page inside the PetLovers Brand Store · Built with standard Amazon Stores modules (hero banner, product grid, split image tiles, image+text sections) following the current store's design system</footer>
+
+</body>
+</html>
