@@ -54,8 +54,14 @@ h1,h2,h3,.disp{font-family:'Baloo 2',sans-serif}
 .tile .im img{max-width:100%;max-height:100%;object-fit:contain}
 .tile .tx{padding:12px 14px 16px;display:flex;flex-direction:column;gap:6px;flex:1}
 .tile .nm{font-size:.83rem;font-weight:700;line-height:1.35;color:var(--ink)}
-.tile .stars{color:#FF9900;font-size:.78rem;letter-spacing:1px}
-.tile .stars span{color:var(--gray);letter-spacing:0;margin-left:4px}
+/* Amazon-faithful rating: number + fractional stars + count */
+.rating{display:flex;align-items:center;gap:5px;font-size:.8rem}
+.rating .rnum{color:var(--ink)}
+.rating .stars{position:relative;display:inline-block;font-size:.85rem;letter-spacing:1px;color:#d5d9d9;line-height:1}
+.rating .stars::before{content:"★★★★★"}
+.rating .stars i{position:absolute;left:0;top:0;overflow:hidden;color:#FF9900;font-style:normal;white-space:nowrap;letter-spacing:1px}
+.rating .stars i::before{content:"★★★★★"}
+.rating .rcount{color:#007185}
 .tile .pr{font-weight:800;font-size:1.05rem;margin-top:auto}
 .tile .pr .old{font-weight:400;font-size:.78rem;color:var(--gray);text-decoration:line-through;margin-left:6px}
 .tile .pr .off{color:#CC0C39;font-size:.78rem;font-weight:800;margin-left:4px}
@@ -138,7 +144,7 @@ footer{padding:20px;text-align:center;color:var(--gray);font-size:.75rem;border-
     <div class="tx">
       <span class="badge o">TIKTOK BESTSELLER</span>
       <div class="nm">EzRoll Reusable Lint Roller — Sticky for Life</div>
-      <div class="stars">★★★★☆<span>(1.8K)</span></div>
+      <div class="rating"><span class="rnum">4.0</span><span class="stars"><i style="width:80%"></i></span><span class="rcount">(1.8K)</span></div>
       <div class="pr">$9.99<span class="old">$11.99</span><span class="off">-17%</span></div>
       <button class="btn-y">View on Amazon</button>
     </div>
@@ -147,7 +153,7 @@ footer{padding:20px;text-align:center;color:var(--gray);font-size:.75rem;border-
     <div class="im"><img src="img/product-travel.png" alt=""></div>
     <div class="tx">
       <div class="nm">Travel Size Lint Roller 4-Pack — 120 Sheets</div>
-      <div class="stars">★★★★☆<span>(1.2K)</span></div>
+      <div class="rating"><span class="rnum">4.4</span><span class="stars"><i style="width:88%"></i></span><span class="rcount">(1.2K)</span></div>
       <div class="pr">$8.99<span class="old">$12.99</span><span class="off">-31%</span></div>
       <button class="btn-y">View on Amazon</button>
     </div>
@@ -156,7 +162,7 @@ footer{padding:20px;text-align:center;color:var(--gray);font-size:.75rem;border-
     <div class="im"><img src="img/product-large.png" alt=""></div>
     <div class="tx">
       <div class="nm">Large 9.4" Carpet &amp; Floor Roller — 360 Sheets</div>
-      <div class="stars">★★★★☆<span>(570)</span></div>
+      <div class="rating"><span class="rnum">4.4</span><span class="stars"><i style="width:88%"></i></span><span class="rcount">(570)</span></div>
       <div class="pr">$26.99<span class="old">$35.99</span><span class="off">-25%</span></div>
       <button class="btn-y">View on Amazon</button>
     </div>
@@ -166,7 +172,7 @@ footer{padding:20px;text-align:center;color:var(--gray);font-size:.75rem;border-
     <div class="tx">
       <span class="badge">BEST VALUE</span>
       <div class="nm">6.3" Large Lint Roller Value Pack — 360 Sheets</div>
-      <div class="stars">★★★★☆<span>(83)</span></div>
+      <div class="rating"><span class="rnum">4.5</span><span class="stars"><i style="width:90%"></i></span><span class="rcount">(83)</span></div>
       <div class="pr">$16.99<span class="old">$21.99</span><span class="off">-23%</span></div>
       <button class="btn-y">View on Amazon</button>
     </div>
@@ -175,7 +181,7 @@ footer{padding:20px;text-align:center;color:var(--gray);font-size:.75rem;border-
     <div class="im"><img src="img/product-mega.png" alt=""></div>
     <div class="tx">
       <div class="nm">Extra Sticky Value Set — 600 Sheets, 6 Pack</div>
-      <div class="stars">★★★★☆<span>(8.8K)</span></div>
+      <div class="rating"><span class="rnum">4.6</span><span class="stars"><i style="width:92%"></i></span><span class="rcount">(8.8K)</span></div>
       <div class="pr">$19.99</div>
       <button class="btn-y">View on Amazon</button>
     </div>
@@ -184,7 +190,7 @@ footer{padding:20px;text-align:center;color:var(--gray);font-size:.75rem;border-
     <div class="im"><img src="img/product-refills.png" alt=""></div>
     <div class="tx">
       <div class="nm">Lint Roller Refills Value Pack — 800 Sheets</div>
-      <div class="stars">★★★★☆<span>(336)</span></div>
+      <div class="rating"><span class="rnum">4.6</span><span class="stars"><i style="width:92%"></i></span><span class="rcount">(336)</span></div>
       <div class="pr">$20.99<span class="old">$24.99</span><span class="off">-16%</span></div>
       <button class="btn-y">View on Amazon</button>
     </div>
@@ -194,7 +200,7 @@ footer{padding:20px;text-align:center;color:var(--gray);font-size:.75rem;border-
     <div class="tx">
       <span class="badge o">CAT-CODED</span>
       <div class="nm">Cat Desk Bed — Elevated Attachment, 360° Swivel</div>
-      <div class="stars">★★★★☆<span>(47)</span></div>
+      <div class="rating"><span class="rnum">4.5</span><span class="stars"><i style="width:90%"></i></span><span class="rcount">(47)</span></div>
       <div class="pr">$39.99<span class="old">$44.99</span><span class="off">-11%</span></div>
       <button class="btn-y">View on Amazon</button>
     </div>
